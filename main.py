@@ -1,16 +1,16 @@
 # main.py
-from models.unet import UNet
-from utils.dataset import FastMRIDataset
-from scripts.train import train_model
-from scripts.evaluate import evaluate_model
 from torch.utils.data import DataLoader
 import torch.optim as optim
 import torch.nn as nn
+from models.unet import UNet
+from utils.dataset import FastMRIDataset
+from scripts.train import train_model
+# from scripts.evaluate import evaluate_model
 
 
 def main():
     # Initialize dataset and dataloader
-    train_dataset = FastMRIDataset(root_dir='../data/train')
+    train_dataset = FastMRIDataset(root_dir='data/train')
     train_dataloader = DataLoader(train_dataset, batch_size=4, shuffle=True)
     
     # Model initialization
